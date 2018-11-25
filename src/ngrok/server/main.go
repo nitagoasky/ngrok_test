@@ -1,8 +1,8 @@
 package server
 
 import (
-	"fmt"
 	log "ngrok/log"
+	"ngrok/conn"
 )
 
 // GLOBALS
@@ -12,9 +12,7 @@ var (
 
 func Main() {
 	opts = parseArgs()
-
 	// init logging
 	log.LogTo(opts.logto, opts.loglevel)
-	
-	fmt.Println("GAOTIAN")
+	conn.Listen(":8080");
 }
